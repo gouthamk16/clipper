@@ -2,6 +2,8 @@
   <img src="assets/demo.gif" width="260" alt="A vertical clip made by Clipper: hook text on top, word-by-word captions below">
 </p>
 
+<p align="center"><a href="assets/demo.mp4">Watch the 30-second demo</a></p>
+
 <h1 align="center">Clipper</h1>
 
 <p align="center"><b>Paste a long video into Claude Code. Get Shorts back.</b><br>
