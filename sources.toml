@@ -1,0 +1,24 @@
+# Where `clipper discover` looks for videos to clip.
+queries = [
+    "streamer highlights",
+    "irl stream",
+    "ishowspeed",
+    "kai cenat",
+    "xqc",
+    "adin ross",
+    "jynxzi",
+    "caseoh",
+    "mrbeast",
+    "podcast full episode",
+    "full interview",
+    "press conference",
+    "keynote speech",
+    "commencement speech",
+    "debate full",
+]
+channels = []        # e.g. "https://www.youtube.com/@lexfridman/videos"
+per_source = 30      # results taken from each search or channel
+language = "en"     # Jev judges English best
+min_views = 300000
+min_minutes = 8
+max_minutes = 90

@@ -1,0 +1,11 @@
+{
+  "name": "clipper",
+  "displayName": "Clipper",
+  "version": "0.1.0",
+  "description": "Turn long videos, podcasts and streams into vertical Shorts, Reels and TikToks: Claude picks the moments and writes the hooks, your machine does the cutting.",
+  "author": { "name": "gouthamk16", "url": "https://github.com/gouthamk16" },
+  "homepage": "https://github.com/gouthamk16/clipper",
+  "repository": "https://github.com/gouthamk16/clipper",
+  "license": "MIT",
+  "keywords": ["video", "shorts", "reels", "tiktok", "clips", "captions", "podcast", "youtube"]
+}

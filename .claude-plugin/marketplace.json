@@ -1,0 +1,12 @@
+{
+  "name": "clipper",
+  "description": "Clipper: long videos into Shorts, inside Claude Code",
+  "owner": { "name": "gouthamk16", "url": "https://github.com/gouthamk16" },
+  "plugins": [
+    {
+      "name": "clipper",
+      "source": "./",
+      "description": "Turn long videos, podcasts and streams into vertical Shorts with captions, hooks and ready-to-post titles."
+    }
+  ]
+}
