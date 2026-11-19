@@ -151,10 +151,14 @@ def size(src: str) -> tuple[int, int]:
 
 
 def render(src: str, clip: dict, words: list[dict], out: Path, reframe: str, font: str, enc: str,
-           max_mb: float | None = None) -> Path:
+           max_mb: float | None = None, trim: bool = True) -> Path:
     s, e = clip["s"], clip["e"]
     w, h = size(src)
-    segs, timed, dur = keep(words, s, e)
+    if trim:
+        segs, timed, dur = keep(words, s, e)
+    else:  # gameplay: the quiet stretches are the action, so keep the whole span
+        segs, dur = [(0.0, e - s)], e - s
+        timed = [{"s": w["s"] - s, "e": w["e"] - s, "w": w["w"]} for w in words if w["e"] > s and w["s"] < e]
     sub = out.with_suffix(".ass")
     sub.write_text(ass(timed, dur, clip["title"], font), encoding="utf-8")
     spoken = "+".join(f"between(t,{a:.3f},{b:.3f})" for a, b in segs)

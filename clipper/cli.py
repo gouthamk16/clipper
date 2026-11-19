@@ -91,7 +91,7 @@ def save(a, work: Path, meta: dict, words: list[dict], clips: list[dict], name) 
     out.mkdir(exist_ok=True)
     for k, c in enumerate(clips, 1):
         c["file"] = render(meta["path"], c, words, out / f"{name(k, c)}.mp4",
-                           a.reframe, a.font, a.encoder, a.max_mb).name
+                           a.reframe, a.font, a.encoder, a.max_mb, not a.keep_pauses).name
         (out / c["file"]).with_suffix(".txt").write_text(posting(c, meta), encoding="utf-8")
         print(f"#{k} {c['s']:7.1f}-{c['e']:7.1f}s  {c['file']:18} {c['title'][:60]}")
     (out / "clips.json").write_text(json.dumps(clips, indent=2), encoding="utf-8")
@@ -204,6 +204,7 @@ def main():
     ap.add_argument("--font", default="Arial")
     ap.add_argument("--encoder", default=default_encoder(), help="ffmpeg video encoder")
     ap.add_argument("--max-mb", type=float, help="cap each clip's file size, e.g. 9.5 for a 10 MB upload limit")
+    ap.add_argument("--keep-pauses", action="store_true", help="don't cut silences; use for gameplay, where they're the action")
     ap.add_argument("--browser", help="take YouTube cookies from this browser if downloads are blocked")
     ap.add_argument("--picks", help="render: picks file (default: picks.json in the video's work dir)")
     ap.add_argument("--sources", default="sources.toml", help="discover: searches and channels to look through")

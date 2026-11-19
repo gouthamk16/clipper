@@ -98,6 +98,9 @@ whole sentences and don't worry about pauses.
 uv run --project "${CLAUDE_PLUGIN_ROOT}" clipper render "<same url or file>"
 ```
 
+For gameplay and streams, add `--keep-pauses`: the quiet stretches there are the action, and cutting them
+turns a 60-second chase into 7 seconds. Pick tighter ranges instead.
+
 Useful options: `--reframe blur` keeps the whole frame on a blurred background instead of
 cropping to the speaker; `--max-mb 9.5` keeps files under 10 MB; `--font "Arial"` changes the
 caption font.

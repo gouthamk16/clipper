@@ -43,6 +43,7 @@ Claude sets these for you when you ask. If you run the engine yourself
 | `--reframe` | `auto` | `auto` crops to the speaker and falls back to blur when no face is found; `blur` always keeps the whole frame on a blurred background |
 | `--font` | `Arial` | Caption font. Any font installed on your system |
 | `--max-mb` | none | Caps each file's size, e.g. `9.5` |
+| `--keep-pauses` | off | Don't cut silences. Use for gameplay and streams, where the quiet parts are the action |
 | `--encoder` | `h264_nvenc` with an NVIDIA GPU, otherwise `libx264` | Any ffmpeg video encoder, e.g. `hevc_nvenc` for smaller files |
 | `--whisper` | `auto` | Speech model. `auto` uses `large-v3` on a GPU and `small` on CPU |
 | `--browser` | none | Borrow YouTube cookies from your browser (`chrome`, `firefox`, `edge`) when downloads are blocked |
